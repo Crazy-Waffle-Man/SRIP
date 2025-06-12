@@ -1,6 +1,16 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class point_rotator {
     public static void main(String[] args) {
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("X value of the point: ");
+        final double X = scanner.nextDouble();
+        System.out.println("Y value of the point: ");
+        final double Y = scanner.nextDouble();
+        System.out.println("Theta (degrees): ");
+        final double THETA = scanner.nextDouble();
+        System.out.println("The point is " + Arrays.toString(rotatePoint(X, Y, degToRad(THETA))));
     }
     public static double radToDeg(double theta) {
         theta /= Math.PI;
