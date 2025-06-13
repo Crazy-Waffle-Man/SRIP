@@ -1,8 +1,7 @@
-//Dylan Kavde
+package java_project;//Dylan Kavde
 //6/12/2025
 //Program will take points and rotate it such that a horizontal partition can be made to definitely take away that split of points. Random points will be created.
 import java.util.Scanner;
-import java.util.Arrays;
 
 
 public class random_points
