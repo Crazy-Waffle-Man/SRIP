@@ -1,5 +1,6 @@
 import java_project.LinearScanner;
 import java_project.PointRotator;
+import java_project.RandomPoints;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -7,14 +8,22 @@ import java.util.Random;
 public class Main {
     private static final Random RNG = new Random();
     public static void main(String[] args) {
-        double[][] points = PointRotator.getPointsFromUser();
+        double[][] points = RandomPoints.generateRandomPoints(10);//PointRotator.getPointsFromUser();
         while (!PointRotator.checkYValues(points)) {
             for (int i = 0; i < points.length; i++) {
                 points[i] = PointRotator.rotatePoint(points[i][0], points[i][1], PointRotator.degToRad(1.0d));
             }
         }
 
-        final double[][][] POINTS = LinearScanner.partition(points, new int[]{3, 4});
+        points = LinearScanner.sortByY(points);
+
+        final double[][][] POINTS = LinearScanner.partition(points, randomPartitionSizes(points.length));
+
+        StringBuilder pointsString = new StringBuilder();
+        for (double[] point : points) {
+            pointsString.append("(").append(point[0]).append(", ").append(point[1]).append(")");
+        }
+        System.out.println(pointsString.toString().replaceAll("\\)\\(", "), ("));
 
         StringBuilder output = new StringBuilder();
         //build output string
