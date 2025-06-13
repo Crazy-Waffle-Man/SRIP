@@ -3,7 +3,7 @@ package java_project;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class point_rotator {
+public class PointRotator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int numPoints = scanner.nextInt();

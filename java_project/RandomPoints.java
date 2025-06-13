@@ -4,7 +4,7 @@ package java_project;//Dylan Kavde
 import java.util.Scanner;
 
 
-public class random_points
+public class RandomPoints
 {
     public static double[][] generateRandomPoints(int n)
     {
