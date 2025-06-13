@@ -18,12 +18,18 @@ public class LinearScanner {
     }
 
     public static double[][] sortByY(double[][] points) {
-        double[][] sortedPoints = new double[points.length][2];
+        double[][] sortedPoints = points.clone(); // Clone to avoid modifying the original array
 
-        for (int i = 0; i < points.length; i++) {
-            
+        int n = sortedPoints.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (sortedPoints[j][1] > sortedPoints[j + 1][1]) {
+                    double[] temp = sortedPoints[j];
+                    sortedPoints[j] = sortedPoints[j + 1];
+                    sortedPoints[j + 1] = temp;
+                }
+            }
         }
-
         return sortedPoints;
     }
 }
