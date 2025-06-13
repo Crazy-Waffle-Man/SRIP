@@ -8,11 +8,14 @@ public class LinearScanner {
             partitionedPoints[i] = new double[partitionSizes[i]][2];
         }
 
+        int startingIndex = 0;
 
         for (int i = 0; i < partitionedPoints.length; i++) {
-            for (int j = 0; j < partitionedPoints[i].length; j++) {
-                partitionedPoints[i][j] = points[j]; // set the partitioned version of the points array
+            int partitionSize = partitionSizes[i]; // Get current partition size
+            for (int j = 0; j < partitionSize; j++) {
+                partitionedPoints[i][j] = points[startingIndex + j]; // Copy elements
             }
+            startingIndex += partitionSize; // Move to next slice
         }
         return partitionedPoints;
     }
