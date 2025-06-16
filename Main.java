@@ -8,8 +8,9 @@ import java.util.Random;
 public class Main {
     private static final Random RNG = new Random();
     public static void main(String[] args) {
-        double[][] points = RandomPoints.generateRandomPoints(10);//PointRotator.getPointsFromUser();
-        while (!PointRotator.checkYValues(points)) {
+        //RandomPoints.generateRandomPoints(25);
+        double[][] points = PointRotator.getPointsFromUser();
+        while (!PointRotator.checkYValues(LinearScanner.sortByY(points))) {
             for (int i = 0; i < points.length; i++) {
                 points[i] = PointRotator.rotatePoint(points[i][0], points[i][1], PointRotator.degToRad(1.0d));
             }
