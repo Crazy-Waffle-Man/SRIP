@@ -9,16 +9,26 @@ public class Main {
     private static final Random RNG = new Random();
     public static void main(String[] args) {
         //RandomPoints.generateRandomPoints(25);
-        double[][] points = PointRotator.getPointsFromUser();
+        double[][] points = new double[][]{
+                {8,7},
+                {7,5},
+                {3,0},
+                {9,6},
+                {10,4},
+                {2,0},
+                {4,3},
+                {9,7},
+                {2,6}
+        };    //PointRotator.getPointsFromUser();
         while (!PointRotator.checkYValues(LinearScanner.sortByY(points))) {
             for (int i = 0; i < points.length; i++) {
-                points[i] = PointRotator.rotatePoint(points[i][0], points[i][1], PointRotator.degToRad(1.0d));
+                points[i] = PointRotator.rotatePoint(points[i][0], points[i][1], PointRotator.degToRad(31d));
             }
         }
 
         points = LinearScanner.sortByY(points);
 
-        final double[][][] POINTS = LinearScanner.partition(points, randomPartitionSizes(points.length));
+        final double[][][] POINTS = LinearScanner.partition(points, new int[]{4, 5}/*randomPartitionSizes(points.length)*/);
 
         StringBuilder pointsString = new StringBuilder();
         for (double[] point : points) {
