@@ -63,6 +63,11 @@ public class Main {
 
             for (int I = 0; I < n; I++) {
                 for (int J = 0; J < n; J++) {
+                    if (doesCaseWorkArray[I][J]) {
+                        System.out.print("\u001b[38;2;0;255;0m");
+                    } else {
+                        System.out.print("\u001b[38;2;255;0;0m");
+                    }
                     if (I < 9) {
                         System.out.print((I + 1) + "  " + (J + 1) + ": " + doesCaseWorkArray[I][J]);
                     } else {
