@@ -41,12 +41,12 @@ public class Main {
                 int thisIWorkingCases = 0;
                 for (int J = 1; J <=n; J++) {
                     if (J <= I && I < nPlusOneOverTwo) {
-                        System.out.println("Behold: "+J+"<="+I+"<"+nPlusOneOverTwo+"(Case A)");
+                        System.out.println("Behold: "+J+"<="+I+"<"+nPlusOneOverTwo+" (Case A)");
                         workingCases++;
                         thisIWorkingCases ++;
                         doesCaseWorkArray[I-1][J-1] = true;
                     } else if (J >= I && I >= nPlusOneOverTwo) {
-                        System.out.println("Behold: "+J+">="+I+">="+nPlusOneOverTwo+"(Case B)");
+                        System.out.println("Behold: "+J+">="+I+">="+nPlusOneOverTwo+" (Case B)");
                         workingCases++;
                         thisIWorkingCases++;
                         doesCaseWorkArray[I-1][J-1] = true;
