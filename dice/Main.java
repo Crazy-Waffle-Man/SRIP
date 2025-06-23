@@ -55,12 +55,6 @@ public class Main {
                 }
                 tableau[I-1] = "If the first number is "+I+", there are "+thisIWorkingCases+" cases that work.";
             }
-            System.out.println(workingCases + " cases out of "+ totalCases +" cases worked.");
-            System.out.print("("+(double)workingCases/(double)totalCases+")\n");
-            for (String item : tableau) {
-                System.out.println(item);
-            }
-
             for (int I = 0; I < n; I++) {
                 for (int J = 0; J < n; J++) {
                     if (doesCaseWorkArray[I][J]) {
@@ -76,10 +70,17 @@ public class Main {
                     if (doesCaseWorkArray[I][J]) {
                         System.out.print(" ");
                     }
-                    System.out.print(" | ");
+                    System.out.print("\u001b[0m | ");
                 }
                 System.out.print("\n");
             }
+            for (String item : tableau) {
+                System.out.println(item);
+            }
+            System.out.print("("+(double)workingCases/(double)totalCases+")\n");
+
+            System.out.println(workingCases + " cases out of "+ totalCases +" cases worked.");
+
         }
 
         scanner.close();
