@@ -1,4 +1,4 @@
-package dice;
+package java_project.dice;
 
 import java.util.Random;
 import java.util.Scanner;

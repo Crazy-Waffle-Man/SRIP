@@ -1,6 +1,4 @@
-import java_project.LinearScanner;
-import java_project.PointRotator;
-import java_project.RandomPoints;
+package java_project.polygons;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -9,17 +7,24 @@ public class Main {
     private static final Random RNG = new Random();
     public static void main(String[] args) {
         //RandomPoints.generateRandomPoints(25);
-        double[][] points = new double[][]{
-                {8,7},
-                {7,5},
-                {3,0},
-                {9,6},
-                {10,4},
-                {2,0},
-                {4,3},
-                {9,7},
-                {2,6}
-        };    //PointRotator.getPointsFromUser();
+        double[][] points = RandomPoints.generateRandomPoints(100);/*{
+                {0.5, 0.5},
+                {1.5, 0.5},
+                {2.8, 2.4},
+                {3.9, 3.1},
+                {4.2, 1.7},
+                {5.4, 4.6},
+                {2.6, 4.6},
+                {1.1, 6.3},
+                {4.8, 7.5},
+                {6.3, 8.2},
+                {6.9, 9.0},
+                {7.5, 6.3},
+                {7.8, 3.9},
+                {8.7, 2.2},
+                {9.5, 5.1},
+                {9.9, 9.7}
+        };    //PointRotator.getPointsFromUser();*/
         while (!PointRotator.checkYValues(LinearScanner.sortByY(points))) {
             for (int i = 0; i < points.length; i++) {
                 points[i] = PointRotator.rotatePoint(points[i][0], points[i][1], PointRotator.degToRad(31d));
@@ -28,7 +33,7 @@ public class Main {
 
         points = LinearScanner.sortByY(points);
 
-        final double[][][] POINTS = LinearScanner.partition(points, new int[]{4, 5}/*randomPartitionSizes(points.length)*/);
+        final double[][][] POINTS = LinearScanner.partition(points, randomPartitionSizes(points.length)/*new int[]{4, 7, 5}*/);
 
         StringBuilder pointsString = new StringBuilder();
         for (double[] point : points) {

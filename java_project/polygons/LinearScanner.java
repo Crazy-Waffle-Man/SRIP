@@ -1,4 +1,4 @@
-package java_project;
+package java_project.polygons;
 
 public class LinearScanner {
     public static double[][][] partition(double[][] points, int[] partitionSizes) {
